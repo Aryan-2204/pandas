@@ -1,3 +1,4 @@
+
 ''' //here dataset is movie//
 Aryan=movies.groupby('Genre')
 Aryan.sum() // can apply more aggregate functions on groupby
@@ -87,4 +88,22 @@ movies.groupby(['star1','genre'])['Metascore'].mean().reset_index().sort_values(
 duo.agg(['min' 'max' 'mean'])
 
 
+
 '''
+'''
+//questions
+ipl.groupby('batsman')['runs'].sum().sort_values(ascending=False).head()
+
+
+six=ipl[ipl['runs']==6]
+six.groupby('batsman')['batsman'].count().sort_values(ascending=False).head()
+
+temp= ipl[ipl['over']>15]
+temp = temp[(temp['runs] == 4) | (temp['runs] == 6)]
+temp.groupby('batsman')['batsman'].count().sort_values(ascending=False).head()
+
+temp = ipl[ipl['batsman']] == 'v-kohli']
+temp.groupby('bowling_team')['batsman_runs'].sum().sort_values(ascending=False).head()
+'''
+
+
